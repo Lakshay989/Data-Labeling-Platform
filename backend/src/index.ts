@@ -1,13 +1,12 @@
 // import {Express} from "express";
 import express from "express" ;
 
+import userRouter from "./routers/user";
+import workerRouter from "./routers/worker";
+
 const app = express() ;
 
-// PostgresSQL + Prisma => ORM
-// postgresql://postgres:xxxxxxx@localhost:5432/web3_saas?connect_timeout=10&sslmode=prefer
+app.use("/v1/user", userRouter); // All user routes in userRouter
+app.use("/v1/worker", workerRouter); // All worker routes in workerRouter
 
-// Next steps:
-// 1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
-// 2. Set the provider of the datasource block in schema.prisma to match your database: postgresql, mysql, sqlite, sqlserver, mongodb or cockroachdb.
-// 3. Run prisma db pull to turn your database schema into a Prisma schema.
-// 4. Run prisma generate to generate the Prisma Client. You can then start querying your database.
+app.listen(3000) ;
