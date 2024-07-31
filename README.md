@@ -1,1 +1,1 @@
-# Data-Labelling-Platform
+# Data-Labeling-Platform
