@@ -10,7 +10,7 @@ import { Transaction, SystemProgram, PublicKey, Keypair, sendAndConfirmTransacti
 import { privateKey } from "../privateKey";
 import bs58 from "bs58" ;
 
-const connection = new Connection(process.env.RPC_URL ?? "");
+const connection = new Connection(process.env.NEXT_PUBLIC_NEXT_PUBLIC_RPC_URL ?? "");
 
 const TOTAL_SUBMISSIONS = 100
 
